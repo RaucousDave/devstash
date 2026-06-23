@@ -14,21 +14,69 @@ devstash helps you store and recall library installation commands and usage note
 go install github.com/RaucousDave/devstash@latest
 ```
 
-**Mac/Linux (curl):**
+**Mac (Apple Silicon — M1/M2/M3):**
 
 ```bash
-curl -sSL https://github.com/RaucousDave/devstash/releases/latest/download/devstash-linux -o devstash
+curl -sSL https://github.com/RaucousDave/devstash/releases/download/v1.0.0/devstash_Darwin_arm64.tar.gz | tar -xz
 chmod +x devstash
 sudo mv devstash /usr/local/bin/
 ```
 
-**Windows (PowerShell):**
+**Mac (Intel):**
 
-```powershell
-Invoke-WebRequest -Uri https://github.com/RaucousDave/devstash/releases/latest/download/devstash.exe -OutFile devstash.exe
+```bash
+curl -sSL https://github.com/RaucousDave/devstash/releases/download/v1.0.0/devstash_Darwin_x86_64.tar.gz | tar -xz
+chmod +x devstash
+sudo mv devstash /usr/local/bin/
 ```
 
+**Linux (x86_64):**
+
+```bash
+curl -sSL https://github.com/RaucousDave/devstash/releases/download/v1.0.0/devstash_Linux_x86_64.tar.gz | tar -xz
+chmod +x devstash
+sudo mv devstash /usr/local/bin/
+```
+
+**Linux (arm64):**
+
+```bash
+curl -sSL https://github.com/RaucousDave/devstash/releases/download/v1.0.0/devstash_Linux_arm64.tar.gz | tar -xz
+chmod +x devstash
+sudo mv devstash /usr/local/bin/
+```
+
+**Windows (x86_64 — most common):**
+
+```powershell
+Invoke-WebRequest -Uri https://github.com/RaucousDave/devstash/releases/download/v1.0.0/devstash_Windows_x86_64.zip -OutFile devstash.zip
+Expand-Archive devstash.zip -DestinationPath .
+```
+
+**Windows (arm64):**
+
+```powershell
+Invoke-WebRequest -Uri https://github.com/RaucousDave/devstash/releases/download/v1.0.0/devstash_Windows_arm64.zip -OutFile devstash.zip
+Expand-Archive devstash.zip -DestinationPath .
+```
+
+> **Windows users:** Windows may show a SmartScreen warning. Click "More info" → "Run anyway". This is normal for new unsigned apps.
+
 Or download the binary for your platform directly from the [releases page](https://github.com/RaucousDave/devstash/releases).
+
+**Verify your download:**
+
+```bash
+# mac/linux
+sha256sum devstash
+```
+
+```powershell
+# windows
+Get-FileHash devstash.exe -Algorithm SHA256
+```
+
+Check your checksum against the [checksums.txt](https://github.com/RaucousDave/devstash/releases/download/v1.0.0/devstash_1.0.0_checksums.txt) file.
 
 ---
 
